@@ -22,6 +22,17 @@ app.get("/download", async function (req, res) {
     res.render("download", { url: links.data[0].url, video: req.query.url });
 });
 
+app.get("/ads.txt", (req, res) => {
+    return res.sendFile("/ads.txt")
+});
+
+app.get("/robots.txt", (req, res) => {
+    return res.sendFile("/robots.txt")
+});
+
+app.get("/sitemap.xml", (req, res) => {
+    return res.sendFile("/sitemap.xml")
+});
 
 
 app.listen(port, function () {
